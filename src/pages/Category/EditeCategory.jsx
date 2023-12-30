@@ -13,13 +13,11 @@ const EditeCatefory = () => {
 
   useEffect(() => {
     setCategory(data);
-    console.log(data);
   }, [data]);
   const handleSubmit = (e) => {
     e.preventDefault();
     const formDate = new FormData(e.target);
     const data = Object.fromEntries(formDate);
-    console.log(data);
     edite(data);
   };
   return (

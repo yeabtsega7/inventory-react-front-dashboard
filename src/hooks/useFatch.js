@@ -63,7 +63,6 @@ const useFatch = ({ basurl, params }) => {
       })
       .then((res) => {
         if (res.status === 204) {
-          console.log(res);
           setFlashmessage("Deleted successfully", false);
           setData(
             data.filter((item) => {

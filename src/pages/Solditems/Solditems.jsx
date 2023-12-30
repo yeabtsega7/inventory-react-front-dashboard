@@ -16,7 +16,6 @@ const SoldItems = () => {
     const formattedDate = date.toISOString().split("T")[0];
     setDate(formattedDate);
   }, []);
-  console.log(data);
   return (
     <>
       <Breadcrumb pageName="Sold Items" />

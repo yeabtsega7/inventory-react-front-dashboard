@@ -23,7 +23,6 @@ const Editeuser = () => {
     const formDate = new FormData(e.target);
     formDate.append("role", enabled ? "admin" : "sale");
     const data = Object.fromEntries(formDate);
-    console.log(data);
     edite(data);
   };
   return (

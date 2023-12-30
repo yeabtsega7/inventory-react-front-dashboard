@@ -56,8 +56,6 @@ const useFatchEdite = ({ basurl }) => {
       })
       .then((res) => {
         if (res.status === 200) {
-          console.log(res.data);
-          console.log(data);
           setData(res.data.data);
           setFlashmessage(res.data.message, false);
           setLoading(false);

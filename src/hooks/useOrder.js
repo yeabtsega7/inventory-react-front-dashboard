@@ -78,7 +78,6 @@ const useOrder = ({ basurl }) => {
   };
 
   const incOrder = ({ Order }) => {
-    console.log(Order);
     const index = order.findIndex(
       (item) => item.product.id === Order.product.id
     );
@@ -146,7 +145,6 @@ const useOrder = ({ basurl }) => {
       formData.append("productId", item.product.id);
       formData.append("quantity", item.quantity);
       formData.append("price", item.product.price * item.quantity);
-      console.log(item);
       instance
         .post("/sale", formData, {
           headers: {

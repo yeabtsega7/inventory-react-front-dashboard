@@ -12,15 +12,13 @@ const LoginPage = () => {
     instance
       .post("/login", data)
       .then((res) => {
-        console.log(res);
         if (res.status === 200) {
           setFlashmessage(res.data.message, false);
-          console.log(res.headers.authorization);
           setAuth(res.data.data, res.headers.authorization);
         }
       })
       .catch((err) => {
-        console.log(err.response.data.message);
+        console.log(err);
         setFlashmessage(err.response.data.message, true);
       });
   };

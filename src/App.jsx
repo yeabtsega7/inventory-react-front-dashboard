@@ -29,7 +29,8 @@ function App() {
       <Routes>
         {Auth.isAuthenticated ? (
           <>
-            {JSON.parse(Auth?.user).role === "admin" && (
+            {console.log(Auth?.user)}
+            {Auth?.user.role === "admin" && (
               <Route path="/admin" element={<Layout />}>
                 <Route index element={<div> dashboard</div>} />
                 <Route path="/admin/users" element={<Users />} />

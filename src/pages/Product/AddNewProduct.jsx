@@ -38,7 +38,6 @@ const AddNewProduct = () => {
     e.preventDefault();
     const formDate = new FormData(e.target);
     const data = Object.fromEntries(formDate);
-    console.log(data);
     if (
       data.name === "" ||
       data.price === "" ||
@@ -59,7 +58,6 @@ const AddNewProduct = () => {
         .then((res) => {
           if (res.status === 200) {
             setFlashmessage("Product added successfully", false);
-            console.log(res);
             location.pathname = "/users";
           } else {
             setFlashmessage(res.data.message, false);

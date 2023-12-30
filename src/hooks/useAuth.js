@@ -25,11 +25,14 @@ const useAuth = () => {
 
         Navigate("/");
       } else {
-        dispatch(login({ user: localStorage.getItem("user") }));
+        const user = JSON.parse(localStorage.getItem("user"));
+        console.log("abc");
+        console.log(Auth);
+        dispatch(login({ user: user }));
       }
     }
     setLoading(false);
-  }, [Auth, Navigate, dispatch]);
+  }, []);
   const setAuth = (user, token) => {
     setLoading(true);
     dispatch(login({ user: user }));

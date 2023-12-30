@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import SidebarLinkGroup from "./SidebarLinkGroup";
 import { RiDashboardFill } from "react-icons/ri";
 import { FaRegUser } from "react-icons/fa";
 import { MdCategory } from "react-icons/md";
@@ -111,8 +110,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <NavLink
                   to=""
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    (pathname === "/" || pathname.includes("dashboard")) &&
-                    "bg-graydark dark:bg-meta-4"
+                    (pathname === "/admin" || pathname.includes("dashboard")) &&
+                    "bg-slate-300 dark:bg-blue-700"
                   }`}
                 >
                   <RiDashboardFill className="fill-current" />
@@ -123,8 +122,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <NavLink
                   to="users"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes("calendar") &&
-                    "bg-graydark dark:bg-meta-4"
+                    pathname.includes("users") &&
+                    "bg-slate-300 dark:bg-blue-700"
                   }`}
                 >
                   <FaRegUser className="fill-current" />
@@ -136,7 +135,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <NavLink
                   to="Category"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes("profile") && "bg-graydark dark:bg-meta-4"
+                    pathname.includes("Category") &&
+                    "bg-slate-300 dark:bg-blue-700"
                   }`}
                 >
                   <MdCategory className="fill-current" />
@@ -148,7 +148,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <NavLink
                   to="product"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes("tables") && "bg-graydark dark:bg-meta-4"
+                    pathname.includes("product") &&
+                    "bg-slate-300 dark:bg-blue-700"
                   }`}
                 >
                   <MdOutlineBakeryDining className="fill-current" />
@@ -160,8 +161,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <NavLink
                   to="solditems "
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes("settings") &&
-                    "bg-graydark dark:bg-meta-4"
+                    pathname.includes("solditems") &&
+                    "bg-slate-300 dark:bg-blue-700"
                   }`}
                 >
                   <FaChartBar className="fill-current" />

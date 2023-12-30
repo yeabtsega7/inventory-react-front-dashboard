@@ -27,7 +27,6 @@ const AddNewCategory = () => {
         .then((res) => {
           if (res.status === 200) {
             setFlashmessage("Category added successfully", false);
-            console.log(res);
             location.pathname = "/users";
           } else {
             setFlashmessage(res.data.message, false);
