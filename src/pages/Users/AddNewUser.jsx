@@ -2,14 +2,14 @@ import { useState } from "react";
 import Breadcrumb from "../../Component/Breadcrumb";
 import { instance } from "../../lib/Axios";
 import useFlashmessage from "../../hooks/useFlashmessage";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AddNewUser = () => {
   const [enabled, setEnabled] = useState(false);
   const [loading, setLoading] = useState(false);
   const { setFlashmessage } = useFlashmessage();
 
-  const location = useLocation();
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const formDate = new FormData(e.target);
@@ -29,7 +29,7 @@ const AddNewUser = () => {
         .then((res) => {
           if (res.status === 200) {
             setFlashmessage("User added successfully", false);
-            location.pathname = "/users";
+            navigate("/admin/users");
           } else {
             setFlashmessage(res.data.message, true);
           }

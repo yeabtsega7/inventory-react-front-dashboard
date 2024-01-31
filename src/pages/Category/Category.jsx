@@ -34,7 +34,7 @@ const Category = () => {
                 <h4 className=" text-xl font-semibold text-black dark:text-white">
                   Categorys Table
                 </h4>
-                <NavLink to={"/Category/addnew"}>
+                <NavLink to={"addnew"}>
                   <button className="inline-flex items-center bg-blue-800 justify-center px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                     Add New
                   </button>
@@ -64,7 +64,7 @@ const Category = () => {
 
                         <td className="border-b border-[#eee] py-5 dark:border-gray-500">
                           <div className="flex items-center space-x-3.5 text-[2rem]">
-                            <Link to={`/Category/${user.id}/edite`}>
+                            <Link to={`${user.id}/edite`}>
                               <button className="hover:text-primary text-blue-800">
                                 <FaUserEdit />
                               </button>

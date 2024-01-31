@@ -2,13 +2,14 @@ import { useState } from "react";
 import Breadcrumb from "../../Component/Breadcrumb";
 import { instance } from "../../lib/Axios";
 import useFlashmessage from "../../hooks/useFlashmessage";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AddNewCategory = () => {
   const [loading, setLoading] = useState(false);
   const { setFlashmessage } = useFlashmessage();
 
-  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formDate = new FormData(e.target);
@@ -26,8 +27,8 @@ const AddNewCategory = () => {
         })
         .then((res) => {
           if (res.status === 200) {
-            setFlashmessage("Category added successfully", false);
-            location.pathname = "/users";
+            setFlashmessage("Category added successfully 123", false);
+            navigate("/admin/Category");
           } else {
             setFlashmessage(res.data.message, false);
           }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Breadcrumb from "../../Component/Breadcrumb";
 import { instance } from "../../lib/Axios";
 import useFlashmessage from "../../hooks/useFlashmessage";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AddNewProduct = () => {
   const [loading, setLoading] = useState(false);
@@ -10,7 +10,7 @@ const AddNewProduct = () => {
   const [catData, setCatData] = useState([]);
   const { setFlashmessage } = useFlashmessage();
 
-  const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     instance
       .get("/category", {
@@ -58,7 +58,7 @@ const AddNewProduct = () => {
         .then((res) => {
           if (res.status === 200) {
             setFlashmessage("Product added successfully", false);
-            location.pathname = "/users";
+            navigate("/admin/product");
           } else {
             setFlashmessage(res.data.message, false);
           }
